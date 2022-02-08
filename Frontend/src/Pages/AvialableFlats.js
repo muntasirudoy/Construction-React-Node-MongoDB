@@ -68,10 +68,9 @@ export const AvialableFlats = () => {
                      {pdata.map(data=>(
                            <Col lg={4} md={4} sm={12}>
                               <div className="avialablecard" >
-                                <Link to={data.slug}><Card img={b1} title={data.ProjectName}  /></Link>
+                                <Link to={data.slug}><Card img={data.img} title={data.ProjectName}  /></Link>
                               </div>
                            </Col>
-                           
                      ))}
 
                      
