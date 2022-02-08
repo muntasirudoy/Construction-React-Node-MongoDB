@@ -1,0 +1,92 @@
+header{
+    width: 100%;
+    background: #2e3237d0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 111;
+    padding: 12px 0;
+    
+}
+
+.logo{
+  width: 200px;
+  height: 100%;
+}
+
+/* 
+ */
+ .p-menubar{
+  background: transparent!important;
+  border: none!important;
+  justify-content: space-between;
+}
+.p-menubar ul{
+  margin-left: auto;
+}
+.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-menuitem-text {
+  color: #fff!important;
+}
+.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-menuitem-icon {
+  color: #fff!important;
+}
+.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-submenu-icon {
+  color: #fff!important;
+}
+.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover {
+  background: transparent!important;
+}
+
+.p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link, .p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link:not(.p-disabled):hover {
+  background: transparent!important;
+  border: none!important;
+  outline: none!important;
+}
+.p-menubar .p-submenu-list {
+  background: #141414!important;
+}
+.p-menubar .p-menuitem.p-menuitem-active > .p-menuitem-link {
+  background: transparent!important;
+}
+.p-menubar .p-menuitem-link .p-menuitem-icon {
+  color: #aaaaaa!important;
+}
+  .p-menubar .p-menuitem-link .p-menuitem-text {
+    color: #aaaaaa!important;
+  }
+
+  .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:focus {
+    outline: 0 none;
+    outline-offset: 0;
+    box-shadow: inset 0 0 0 0.15rem #0000!important;
+  }
+
+  .p-menubar .p-submenu-list a{
+  font-size: 14px;
+  /* transition: 0.3s; */
+}
+header .p-submenu-list{
+  transition: 0.4s!important;
+}
+.p-submenu-list .p-menuitem-link a{
+  transition: 0.3s!important;
+}
+.p-submenu-list .p-menuitem-link:hover a {
+    color: #ff961e!important;
+    padding-left: 15px;
+  }
+  header a{
+    color: rgb(231, 231, 231)!important;
+  }
+
+  .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-menuitem-text {
+   font-size: 16px!important;
+   font-weight: 400;
+  }
+
+  .p-menubar .p-submenu-list {
+    width: 280px!important;
+    margin-top: 20px;
+    transition: 0.3s;
+  }
+  

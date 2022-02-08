@@ -1,0 +1,28 @@
+.details-card{
+    margin-top: 200px;
+    width: 100%;
+    background:#957B5F;
+    color: white;
+    padding: 40px 0;
+}
+
+.slider{
+    margin-top: -150px!important;
+}
+
+.details-card .details-text{
+    margin-top: 30px;
+}
+
+.details-box h4{
+    font-size: 26px;
+    font-weight: 600;
+}
+.details-box p{
+    font-size: 14px;
+    text-align: justify;
+    color: #cacaca
+}
+.details-box .subtitle{
+    margin: 0;
+}
