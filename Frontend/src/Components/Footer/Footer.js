@@ -1,7 +1,5 @@
 import React from 'react'
-import {Link } from "react-router-dom";
-import logo from '../../Images/logo/full-logo.svg'
-import {Container,Row,Col} from 'react-bootstrap';
+import { Row, Col } from 'antd';
 import { Footertext } from './Footertext';
 import './footer.css'
 
@@ -9,10 +7,10 @@ export const Footer = () => {
     return (
       
         <div class='footer'>
-             <Container>
+             <div className='container foot'>
                       
-                             <Row>
-                                <Col  className='footer-col' xs={12} md={4} lg={4} > 
+                             <Row span={24}>
+                                <Col  className='footer-col' span={8} > 
                                    <h4 className='footer-title'> MAHMUD BUILDERS LTD</h4>
                                    <ul>
                                      <Footertext li="Address: SEL Centre, 29, West Panthapath,Bir Uttam Kazi Nuruzzaman Road, Dhaka 1205" />
@@ -21,7 +19,7 @@ export const Footer = () => {
                                      <Footertext li="Email (For Information): info@sel.com.bd" />
                                    </ul>
                                 </Col>
-                                <Col className='footer-col' xs={12} md={4} lg={4} >
+                                <Col className='footer-col' span={8}>
                                 <h4 className='footer-title'> USEFUL LINKS</h4>
                                    <ul>
                                      <Footertext li="Webmail login" />
@@ -30,7 +28,7 @@ export const Footer = () => {
                                      <Footertext li="Our Profile" />
                                    </ul>
                                 </Col>
-                                <Col className='footer-col' xs={12} md={4} lg={4} >
+                                <Col className='footer-col' span={8} >
                                 <h4 className='footer-title'>NEWS LETTER</h4>
                                    <ul>
                                      <Footertext li="Facebook" />
@@ -39,9 +37,9 @@ export const Footer = () => {
                                 </Col>
                             </Row>
                       <Row style={{textAlign:"center", color:"rgb(192, 192, 192)",fontSize:"12px"}}>
-                        <Col xs={12} md={12} lg={12}  > <p>Copyrights © 2018. All Rights Reserved by SEL || Developed By: SEL IT</p> </Col>
+                        <Col span={24} > <p>Copyrights © 2018. All Rights Reserved by SEL || Developed By: SEL IT</p> </Col>
                       </Row>
-          </Container>
+          </div>
         </div>
       
     )

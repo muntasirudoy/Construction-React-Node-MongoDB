@@ -6,12 +6,13 @@ import { getDatabase,ref, set,onValue,push,child, get,onChildAdded, onChildChang
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCH4O8Cp3Syxg0YRGFUavys44OkVfUVwOM",
-  authDomain: "mern-city.firebaseapp.com",
-  projectId: "mern-city",
-  storageBucket: "mern-city.appspot.com",
-  messagingSenderId: "918332997063",
-  appId: "1:918332997063:web:e563c43d4c84d6cc546de2"
+  apiKey: "AIzaSyAkYCpAjoaA6SsbdVrt8nlQkzuiDfDlNnk",
+  authDomain: "mahmud-builders.firebaseapp.com",
+  projectId: "mahmud-builders",
+  storageBucket: "mahmud-builders.appspot.com",
+  messagingSenderId: "638066349131",
+  appId: "1:638066349131:web:0da5f29357fbe52df7a9ce",
+  measurementId: "G-1JNH114T2M"
 };
 
 

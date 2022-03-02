@@ -3,14 +3,16 @@ import "slick-carousel/slick/slick.css";
 import Slider from "react-slick";
 import SampleNextArrow from './SampleNextArrow'
 import SamplePrevArrow from './SamplePrevArrow'
-import slide1 from './banner.png'
-import slide3 from './b2.jpg'
-import slide4 from './b3.jpg'
-import slide5 from './b4.jpg'
-import slide6 from './b5.jpg'
+import slide1 from '../../Images/slide1.jpg'
+import slide3 from '../../Images/slide2.jpg'
+import slide4 from '../../Images/slide3.jpg'
+import slide5 from '../../Images/slide1.jpg'
+import slide6 from '../../Images/slide2.jpg'
 
 import './banner.css'
 import { Parallax } from 'react-parallax';
+import { Link } from 'react-router-dom';
+
   const Slide= () => {
 
  
@@ -34,40 +36,51 @@ import { Parallax } from 'react-parallax';
           
               <Parallax blur={1} strength={400} className='single-banner' bgImage={slide1} >
                 <div className='overlay'>
-                    <h1 data-aos="fade-up">The Fath Started from 1993</h1>
+                    <div className='inoverlay'> 
+                        <div className='leftb'></div>
+                        <div className='rightb'></div>
+                        <h1>We are <span>Advance</span> <br/> and Right for the work</h1>
+                        <p>lorem Ipsum available, but the majority have suffered</p>
+                        <Link to="/" > OUR SERVICE </Link>
+                    </div>
                 </div>
               </Parallax>
-           
-               <Parallax className='single-banner' blur={1} bgImage={slide3} strength={400} className='single-banner' bgImage={slide1} >
-                  <div className='overlay'>
-                        <h1 data-aos="fade-up">Completed Over 1000+ Project Around The World</h1>
-                  </div>
-                </Parallax>
+              <Parallax blur={1} strength={400} className='single-banner' bgImage={slide5} >
+                <div className='overlay'>
+                    <div className='inoverlay'> 
+                        <div className='leftb'></div>
+                        <div className='rightb'></div>
+                        <h1>We are professional <br/><span>Quality</span> Services</h1>
+                        <p>lorem Ipsum available, but the majority have suffered</p>
+                        <Link to="/" > OUR SERVICE </Link>
+                    </div>
+                </div>
+              </Parallax>
+              <Parallax blur={1} strength={400} className='single-banner' bgImage={slide3} >
+                <div className='overlay'>
+                    <div className='inoverlay'> 
+                        <div className='leftb'></div>
+                        <div className='rightb'></div>
+                        <h1>We are <span>Advance</span> <br/> and Right for the work</h1>
+                        <p>lorem Ipsum available, but the majority have suffered</p>
+                        <Link to="/" > OUR SERVICE </Link>
+                    </div>
+                </div>
+              </Parallax>
+              <Parallax blur={1} strength={400} className='single-banner' bgImage={slide4} >
+                <div className='overlay'>
+                    <div className='inoverlay'> 
+                        <div className='leftb'></div>
+                        <div className='rightb'></div>
+                        <h1>We are <span>Advance</span> <br/> and Right for the work</h1>
+                        <p>lorem Ipsum available, but the majority have suffered</p>
+                        <Link to="/" > OUR SERVICE </Link>
+                    </div>
+                </div>
+              </Parallax>
 
 
-                <Parallax className='single-banner' blur={1} bgImage={slide3} strength={400} className='single-banner' bgImage={slide1} >
-                  <div className='overlay'>
-                      <h1 data-aos="fade-up">600+ Experienced Employers</h1>
-                  </div>
-                </Parallax>
 
-                <Parallax className='single-banner' blur={1} bgImage={slide4} strength={400} className='single-banner' bgImage={slide1} >
-                  <div className='overlay'>
-                      <h1 data-aos="fade-up">ALL Sevice Under the Same Roof</h1>
-                  </div>
-                </Parallax>
-
-                <Parallax className='single-banner' blur={1} bgImage={slide5} strength={400} className='single-banner' bgImage={slide1} >
-                  <div className='overlay'>
-                     <h1 data-aos="fade-up">Just in Time Handover </h1>
-                  </div>
-                </Parallax>
-
-                <Parallax className='single-banner' blur={1} bgImage={slide6} strength={400} className='single-banner' bgImage={slide1} >
-                  <div className='overlay'>
-                     <h1 data-aos="fade-up"> Book your Appointment Now </h1>
-                  </div>
-                </Parallax>
                
       </Slider>
     </div>
