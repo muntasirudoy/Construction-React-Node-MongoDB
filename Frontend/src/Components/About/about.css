@@ -1,3 +1,9 @@
+.all-about{
+ background: url(../../Images/bg7.png)center no-repeat;
+ background-size: cover;
+}
+
+
 .about{
     padding: 40px 0;
     height: 100vh;
