@@ -1,14 +1,18 @@
-import React from 'react';
-import {Container,Row, Col} from 'react-bootstrap';
-import CompanyProfileText from './CompanyProfileText';
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import CompanyProfileText from "./CompanyProfileText";
 const CompanyProfile = () => {
-  return <> 
-          <div className='companyprofile'>
-                    <Container>
-                        
-            
-                          <CompanyProfileText companydetails="The Structural Engineers Ltd. (SEL)
+  return (
+    <>
+      <div className="companyprofile">
+        <Container>
+          <CompanyProfileText
+            companydetails="The Structural Engineers Ltd. (SEL)
+
                            is a private limited company, established in 1983 as a proprietary 
+                        
+                        
+                        
                            concern with Engr. Md. Abdul Awal, a graduate Civil Engineer of 1977 
                            from BUET, Dhaka as the proprietor. Subsequently the firm was converted
                             into a private limited company in February, 1987 and was duly registered
@@ -40,12 +44,12 @@ const CompanyProfile = () => {
                                           for environmental & social development etc. Currently, four schools for children are being operated
                                            under the supervision of SEL Charitable Foundation in different parts of the country. SEL stands for
                                             honesty, trust, faith, quality & commitment. These are the guiding forces behind SEL’s excellence as a
-                                             trusted developer. " />
-                            
-                    </Container>
-            </div>
-
-</>;
+                                             trusted developer. "
+          />
+        </Container>
+      </div>
+    </>
+  );
 };
 
 export default CompanyProfile;
