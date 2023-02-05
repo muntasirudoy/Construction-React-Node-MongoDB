@@ -28,8 +28,8 @@ const Header = () => {
               <div className='mid-header'>
                <div className='logo'><img src={logo}></img> <h1>Mahmud</h1></div>   
                 <Menu onClick={handleClick} selectedKeys={[current]} mode="horizontal">
-                        <Menu.Item key="HOME" icon={<HomeOutlined />}>
-                        <Link to="/">Home</Link>
+                        <Menu.Item key="HOME" >
+                            <Link to="/">Home</Link>
                         </Menu.Item>
 
                         <SubMenu key="ABOUTUS"  title="ABOUT US">

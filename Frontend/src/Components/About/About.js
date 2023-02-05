@@ -11,7 +11,8 @@ import { Link } from 'react-router-dom';
 
 export const About = (props) => {
 
-  return <div className='container'>
+  return <div className='all-about'>
+      <div className='container'>
                     <div className='about'> 
                             <Subheading  subheading ="who we are"/>
                             <Heading  heading="About Us"/>
@@ -52,6 +53,7 @@ export const About = (props) => {
                             </Row>
                         </div>
                     </div>
+                </div>
          </div>;
 };
 export default About
