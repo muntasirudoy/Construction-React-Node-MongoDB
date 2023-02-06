@@ -663,3 +663,8 @@ tr:last-of-type td:last-child {
 .form-area .p-dropdown:not(.p-disabled):hover {
   box-shadow: none !important;
 }
+
+.cardt img {
+  width: 100%;
+  height: 100%;
+}

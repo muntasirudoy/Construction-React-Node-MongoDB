@@ -22,7 +22,7 @@ export const Category = (props) => {
               md={8}
               lg={6}
             >
-              <Link to="./ReadyProjects">
+              <Link to="./ready-projects">
                 {" "}
                 <Card img={c1} title="Ready Projects" />{" "}
               </Link>
@@ -36,7 +36,7 @@ export const Category = (props) => {
               md={8}
               lg={6}
             >
-              <Link to="./AvialableFlats">
+              <Link to="./available-flats">
                 {" "}
                 <Card img={c2} title="Complete Projects" />{" "}
               </Link>
@@ -50,7 +50,7 @@ export const Category = (props) => {
               md={8}
               lg={6}
             >
-              <Link to="./UpcomingProjects">
+              <Link to="./upcoming-projects">
                 {" "}
                 <Card img={c3} title="Upcoming Projects" />{" "}
               </Link>
@@ -64,7 +64,7 @@ export const Category = (props) => {
               md={8}
               lg={6}
             >
-              <Link to="./OngoingProjects">
+              <Link to="./ongoing-projects">
                 {" "}
                 <Card img={c4} title="Ongoing Projects" />{" "}
               </Link>

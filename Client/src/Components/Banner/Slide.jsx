@@ -21,7 +21,7 @@ const BgElement = Element.BgElement;
 const Slide = () => {
   return (
     <div className="all-banner">
-      {/* <BannerAnim prefixCls="banner-user" autoPlay="true">
+      <BannerAnim prefixCls="banner-user" autoPlay="true">
         <Element
           prefixCls="banner-user-elem"
           key="0"
@@ -186,7 +186,7 @@ const Slide = () => {
             </div>
           </Parallax>
         </Element>
-      </BannerAnim> */}
+      </BannerAnim>
 
       {/* <Arrow arrowType="prev" key="prev" prefixCls="user-arrow" >
              <div className="arrow">Prev</div>

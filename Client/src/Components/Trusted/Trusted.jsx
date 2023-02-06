@@ -35,6 +35,26 @@ const Trusted = () => {
           modules={[Navigation]}
           navigation
           loop={true}
+          breakpoints={{
+            // when window width is >= 640px
+            640: {
+              width: 640,
+              slidesPerView: 4,
+            },
+            // when window width is >= 768px
+            768: {
+              width: 768,
+              slidesPerView: 4,
+            },
+            575: {
+              width: 575,
+              slidesPerView: 3,
+            },
+            320: {
+              width: 320,
+              slidesPerView: 2,
+            },
+          }}
         >
           <SwiperSlide>
             <div className="cardt">

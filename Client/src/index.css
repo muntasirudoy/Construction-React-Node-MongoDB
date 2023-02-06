@@ -1,7 +1,12 @@
+.c-content p {
+    margin-top: 15px;
+}
+
+
 @media (min-width:320px) and (max-width:575.98px) {
 
     .heading-h1 h1 {
-        font-size: 34px;
+        font-size: 26px;
     }
 
     .header-img {
@@ -52,6 +57,10 @@
         height: 100%;
         padding: 20px;
         box-sizing: border-box;
+    }
+
+    .category .single-card {
+        height: 270px;
     }
 
     .about .detail-heading h2 {
@@ -113,8 +122,9 @@
     }
 
     .choose .text-card {
-        padding: 15px;
+        padding: 35px;
         box-sizing: border-box;
+        margin-top: 0;
     }
 
     .choose-heading {
@@ -166,5 +176,30 @@
         font-size: 14px;
         width: fit-content;
         margin: 15px auto 0;
+    }
+
+    .trusted {
+        padding: 40px 0 60px;
+    }
+
+    .c-content h3 {
+        font-size: 20px;
+    }
+
+    .trusted .cardt {
+        height: 70px;
+        padding: 15px 25px;
+    }
+
+    .trusted .cardt img {
+        width: 80px;
+    }
+
+    :root {
+        --swiper-navigation-size: 28px;
+    }
+
+    .footer {
+        padding: 35px;
     }
 }
