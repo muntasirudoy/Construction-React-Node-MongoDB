@@ -351,13 +351,13 @@ p-dropdown:not(.p-disabled):hover {
 
 
 .flatsdetails {
-  margin-bottom: 100px;
+  margin: 50px;
 }
 
 .flatsdetails .image {
   width: 100%;
   padding: 25px;
-  height: 100%;
+  height: 70%;
 }
 
 .flatsdetails img {
@@ -451,5 +451,16 @@ tr:last-of-type td:last-child {
 
 .table> :not(caption)>*>* {
   border-bottom-width: 0px !important;
+}
 
+.table>:not(:first-child) {
+  border-top: 0px solid currentColor !important;
+}
+
+.p-tag {
+  font-weight: 500 !important;
+}
+
+.image-gallary {
+  display: flex;
 }

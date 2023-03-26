@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, {useContext } from "react";
 import {
-  HomeOutlined,
   PhoneOutlined,
   MailOutlined,
   FacebookFilled,
@@ -11,25 +10,30 @@ import {
 import logo from "/logo.svg";
 import { Link, useNavigate } from "react-router-dom";
 import "./layout.css";
-import { getUserInfo } from "../dbconfig";
+import {authSignout} from "../dbconfig";
 import { Store } from "../Context/context";
 import { Menubar } from "primereact/menubar";
+import { Chip } from "primereact/chip";
+
 
 const Header = () => {
-  const { currentUser, setCurrentuser } = useContext(Store);
+  const { currentUser, setCurrentUser } = useContext(Store);
+
   const navigate = useNavigate();
   const handleAdmin = () => {
-    navigate(currentUser ? "/dashboard" : "/login?redirect=/dashboard");
+    navigate(currentUser?.userStatus == "authority" ? "/dashboard" : "/login?redirect=/dashboard");
   };
 
-  useEffect(() => {
-    // const fetchData = async () => {
-    //   console.log("hello");
-    //   let res = getUserInfo();
-    //   console.log(res);
-    // };
-    // fetchData();
-  }, []);
+  const handleClient = () => {
+    navigate(
+      currentUser?.userStatus == "client" ? "/client-profile" : "/login?redirect=/client-profile"
+    );
+  };
+
+  const handleSignOut = async () => {
+    setCurrentUser("");
+    authSignout();
+  };
 
   const items = [
     {
@@ -153,22 +157,50 @@ const Header = () => {
       label: "ACCOUNTS",
       items: [
         {
-          label: (
-            <a style={{ width: "100%" }} onClick={handleAdmin}>
-              Admin
+          label:
+            currentUser?.userStatus == "authority" ? (
+              <a style={{ width: "100%" }} onClick={handleAdmin}>
+                Admin
+              </a>
+            ) : currentUser?.userStatus == "client" ? (
+              <a className="nav-link" onClick={handleClient}>
+                Client's Dashboard
+              </a>
+            ) : (
+              <>
+                           <a className="nav-link" onClick={handleSignOut}>
+              Logout
             </a>
-          ),
+              </>
+            ),
         },
+
         {
-          label: (
-            <Link id="RouterNavLink" className="nav-link" to="/">
-              Clients
-            </Link>
+          label: currentUser?.userStatus == "client" && (
+            <a className="nav-link" onClick={handleSignOut}>
+              Logout
+            </a>
           ),
         },
       ],
     },
   ];
+
+  const content = (
+    <>
+      {/* <span className="font-medium mr-4 ml-3">{currentUser?.username}</span> */}
+      <img className="mr-0" src="/person3.jpg" alt="" />
+    </>
+  );
+  const content2 = (
+    <>
+    <Link to="/login"><Chip label="Login" style={{fontWeight:"600"}} icon="pi pi-sign-in" /></Link>
+    <Link to="/client-signup"><Chip label="Signup" style={{fontWeight:"600"}} icon="pi pi-sync" /></Link>
+    
+    </>
+  );
+
+
 
   const start = (
     <Link id="RouterNavLink" className="nav-link" to="/">
@@ -198,6 +230,35 @@ const Header = () => {
         <div className="container">
           <div className="mid-header">
             <Menubar model={items} start={start} />
+            {/* <Navbar /> */}
+            {currentUser ? (
+              <div className="user-account">
+                <Chip
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    padding: "0",
+                  }}
+                  template={content}
+                />
+              </div>
+            ):
+            
+           <>
+              <Chip
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    padding: "0",
+                    background:"none",
+                    gap:"10px"
+                  }}
+                  template={content2}
+                />
+           </>
+            }
           </div>
         </div>
       </div>

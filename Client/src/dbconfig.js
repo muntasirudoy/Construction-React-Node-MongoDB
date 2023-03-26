@@ -62,8 +62,9 @@ export const createDocuments = async (userData, additionalInfo) => {
 
   if (!snapshot.exists()) {
     const userInfo = {
-      username: userData.displayName ? userData.displayName : additionalInfo,
+      username: userData.displayName ? userData.displayName : additionalInfo.username,
       email: userData.email,
+      userStatus:additionalInfo.userStatus
     };
     try {
       await setDoc(docRef, userInfo);
@@ -71,7 +72,7 @@ export const createDocuments = async (userData, additionalInfo) => {
       console.log(error.message);
     }
   }
-  return await docRef;
+  return  docRef;
 };
 
 // create user with email and password
@@ -90,7 +91,7 @@ export const authListener = async (callback) => {
 };
 // auth signout
 export const authSignout = async () => {
-  console.log("signout");
+
   return await signOut(auth);
 };
 // get individual user
@@ -120,17 +121,18 @@ export const getCurrentUser = async (id) => {
 
 // update individual user
 export const updateIndividualUser = async (data) => {
-  console.log(data);
   const docRef = doc(db, "user", data.id);
-  updateDoc(docRef, data)
+
+  await updateDoc(docRef, data)
     .then((docRef) => {
-      console.log(
+       console.log(
         "A New Document Field has been added to an existing document"
       );
     })
     .catch((error) => {
       console.log(error);
     });
+return docRef
 };
 
 // get Home about
@@ -579,4 +581,71 @@ export const getIndividualContactus = async (id) => {
   const docRef = await doc(db, "contact_us", id);
   const docSnap = await getDoc(docRef);
   return docSnap.data();
+};
+// // create document for Project Details form
+export const createDocumentsForClientProjectInfo = async (data) => {
+  console.log(data);
+
+  const docRef = await doc(db, "client_project_info",uuidv4() );
+  const snapshot = await getDoc(docRef);
+  if (!snapshot.exists()) {
+    const {
+      id,
+      projectName,
+      land,
+      foundation,
+      address,
+      refference} = data;
+
+    const projectInfo = {
+      clientId: id,
+      projectName,
+      land,
+      foundation,
+      address,
+      refference
+    };
+    try {
+      await setDoc(docRef, projectInfo);
+    } catch (error) {
+      console.log(error.message);
+    }
+  }else{
+    console.log("The product is exist");
+  }
+  return docRef;
+};
+
+// get all land owner
+export const getAllClientProjects = async () => {
+  let projectData = [];
+  const docRef = await getDocs(collection(db, "client_project_info"));
+  docRef.forEach((doc) => {
+    projectData.push({ ...doc.data(), id: doc.id });
+  });
+  return projectData;
+};
+
+export const getSingleUserInfoBySlug = async (location, slug) => {
+  const citiesRef = collection(db, location);
+  // Create a query against the collection.
+  const q = query(citiesRef, where("userStatus", "==", slug));
+  const querySnapshot = await getDocs(q);
+  let details = [];
+  await querySnapshot.forEach((doc) => {
+    details.push(doc.data())
+  });
+  return details;
+};
+// get individual client projects
+export const getIndividualClientProjectInfo = async (location, slug) => {
+  const citiesRef = collection(db, location);
+  // Create a query against the collection.
+  const q = query(citiesRef, where("clientId", "==", slug));
+  const querySnapshot = await getDocs(q);
+  let details = [];
+  await querySnapshot.forEach((doc) => {
+    details.push({...doc.data(), id:doc.id})
+  });
+  return details;
 };

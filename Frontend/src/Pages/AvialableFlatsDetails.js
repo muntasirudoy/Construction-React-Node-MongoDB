@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useReducer } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import Tr from "../Components/Common/Tr";
@@ -39,14 +39,18 @@ export const AvialableFlatsDetails = () => {
   }, []);
 
   console.log(flatdata);
-
+  const [numPages, setNumPages] = useState(null);
+  function onDocumentLoadSuccess({ numPages }) {
+    setNumPages(numPages);
+  }
   return (
     <div className="flatsdetails">
       <Container>
         <Row>
           <Col lg={5} sm={12} md={5}>
             <div className="image">
-              <img src={flatdata.img}></img>
+              <img src={flatdata.img} alt="building" />
+              <div className="image-gallary"></div>
             </div>
           </Col>
           <Col lg={7} sm={12} md={7}>
@@ -96,6 +100,21 @@ export const AvialableFlatsDetails = () => {
                   />
                 </tbody>
               </table>
+              <div className="available-info">
+                <h4>Additional Information</h4>
+                <Tag
+                  style={{ background: "grey", cursor: "pointer" }}
+                  value="Floor Plan"
+                ></Tag>
+                <Tag
+                  style={{
+                    background: "grey",
+                    marginLeft: "20px",
+                    cursor: "pointer",
+                  }}
+                  value="Present Status"
+                ></Tag>
+              </div>
             </div>
           </Col>
         </Row>

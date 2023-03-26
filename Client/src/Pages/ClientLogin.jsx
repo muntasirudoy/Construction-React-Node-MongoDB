@@ -1,22 +1,23 @@
+
 import React, { useContext, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { loginUserWithEmailPassword, signinWithGooglePopup } from "../dbconfig";
 import GoogleButton from "react-google-button";
 import Loader from "../Components/Common/Loader";
 
-const Login = () => {
+const ClientLogin = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
   const [error, setError] = useState("");
   const { search } = useLocation();
   const redirectUrl = new URLSearchParams(search).get("redirect");
-  const redirect = redirectUrl ? redirectUrl : "/";
+  const redirect = redirectUrl ? redirectUrl : "/client-profile";
   const [loader, setLoader] = useState(false);
   const navigator = useNavigate();
   const googleSignIn = async () => {
     let res = await signinWithGooglePopup();
     if (res.user) {
-      navigator("/dashboard");
+      navigator("/client-profile");
     } else {
       navigator("/");
     }
@@ -29,7 +30,7 @@ const Login = () => {
     setLoader(true);
     try {
       let res = await loginUserWithEmailPassword(email, password);
-      console.log(res);
+      console.log(res)
       if (res) {
         setLoader(false);
         navigator(redirect);
@@ -81,7 +82,7 @@ const Login = () => {
                 </p>
               )}
               <div className="action">
-                Don't have an account? <Link to="/signup"> SIGNUP</Link>
+                Don't have an account? <Link to="/client-signup"> Create Account</Link>
               </div>
             </div>
           </div>
@@ -91,4 +92,4 @@ const Login = () => {
   }
 };
 
-export default Login;
+export default ClientLogin;

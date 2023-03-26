@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 export const AvialableFlats = () => {
   const [pdata, setPdata] = useState([]);
   useEffect(async () => {
-    let { data } = await axios.get("http://localhost:8000/avilableflats");
+    let { data } = await axios.get("https://mahmud.onrender.com/avilableflats");
     setPdata(data);
   }, []);
   console.log(pdata);
